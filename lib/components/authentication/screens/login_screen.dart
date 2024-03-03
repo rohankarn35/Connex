@@ -1,3 +1,4 @@
+import 'package:dating_app/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,8 +18,8 @@ class _LoginScreenState extends State<LoginScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFFFD5C63),
-              Color(0xFFD6426C),
+              Color.fromARGB(255, 238, 118, 118),
+              Colors.pink,
             ],
           ),
         ),
@@ -132,6 +133,34 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 10),
+                        child: Text(
+                          'OR',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 20),
+                  CustomButton().customButton("Login With Phone Number", () {})
                 ],
               ),
             ),

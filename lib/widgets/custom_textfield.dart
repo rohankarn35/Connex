@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField {
-  Widget customTextField(bool obscureText , String hintText, Widget prefixIcon,TextEditingController controller) {
+  Widget customTextField(bool obscureText, String hintText, Widget prefixIcon, TextEditingController controller) {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
