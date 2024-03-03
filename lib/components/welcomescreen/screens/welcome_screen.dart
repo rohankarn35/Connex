@@ -8,7 +8,7 @@ class WelcomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -23,17 +23,17 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
-              Spacer(),
-              Text("Welcome to Connex",
+              const Spacer(),
+              const Spacer(),
+              const Text("Welcome to Connex",
                   style: TextStyle(
                       fontSize: 30,
                       color: Colors.white,
                       fontWeight: FontWeight.bold)),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
                       
               DefaultTextStyle(
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 20,
                     color: Colors.white,
                     fontWeight: FontWeight.bold),
@@ -41,13 +41,13 @@ class WelcomeScreen extends StatelessWidget {
                     repeatForever: true,
 
                   animatedTexts: [
-                  TypewriterAnimatedText('Only dating app you need', speed: Duration(milliseconds: 100)),
-                  TypewriterAnimatedText('Connect with people around you',speed: Duration(milliseconds: 100)),
-                  TypewriterAnimatedText('Find your perfect match',speed: Duration(milliseconds: 100)),
+                  TypewriterAnimatedText('Only dating app you need', speed: const Duration(milliseconds: 100)),
+                  TypewriterAnimatedText('Connect with people around you',speed: const Duration(milliseconds: 100)),
+                  TypewriterAnimatedText('Find your perfect match',speed: const Duration(milliseconds: 100)),
                 ]),
               ),
-              Spacer(),
-              SizedBox(height: 30),
+              const Spacer(),
+              const SizedBox(height: 30),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 40),
                 child: Column(
@@ -55,14 +55,13 @@ class WelcomeScreen extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.white,
-                        onPrimary: Color(0xFFD6426C),
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        foregroundColor: const Color(0xFFD6426C), backgroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: Container(
+                      child: const SizedBox(
                         width: double.infinity,
                         child: Center(
                           child: Text(
@@ -76,17 +75,17 @@ class WelcomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     OutlinedButton(
                       onPressed: () {},
                       style: OutlinedButton.styleFrom(
-                        side: BorderSide(color: Colors.white),
-                        padding: EdgeInsets.symmetric(vertical: 15),
+                        side: const BorderSide(color: Colors.white),
+                        padding: const EdgeInsets.symmetric(vertical: 15),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         ),
                       ),
-                      child: Container(
+                      child: const SizedBox(
                         width: double.infinity,
                         child: Center(
                           child: Text(
@@ -104,7 +103,7 @@ class WelcomeScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),

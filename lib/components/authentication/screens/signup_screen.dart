@@ -40,7 +40,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -58,8 +58,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                    SizedBox(height: 60,),
-                  Text(
+                    const SizedBox(height: 60,),
+                  const Text(
                     "Create Account",
                     style: TextStyle(
                       fontSize: 36,
@@ -68,72 +68,69 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   customTextFormField.customTextField(
-                      false,
+                     
                       "First Name",
-                      Icon(
+                      const Icon(
                         Icons.person_2_rounded,
                         color: Colors.white,
                       ),
                       firstNameEditingController,),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
               
                   customTextFormField.customTextField(
-                      false,
                       "Last Name",
-                      Icon(
+                      const Icon(
                         Icons.person_2_rounded,
                         color: Colors.white,
                       ),
                       lastNameEditingController),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   customTextFormField.customTextField(
-                      false,
                       "Email",
-                      Icon(
+                      const Icon(
                         Icons.email_rounded,
                         color: Colors.white,
                       ),
-                      emailEditingController),
-                  SizedBox(
+                      emailEditingController,keyboardType: TextInputType.emailAddress),
+                  const SizedBox(
                     height: 10,
                   ),
                   customTextFormField.customTextField(
-                      true,
                       "Create Password",
-                      Icon(
+                      const Icon(
                         Icons.lock_rounded,
                         color: Colors.white,
                       ),
-                      createPasswordEditingController),
-                  SizedBox(
+                      createPasswordEditingController,obscureText: true),
+                  const SizedBox(
                     height: 10,
                   ),
                   customTextFormField.customTextField(
-                      true,
+                    
                       "Confirm Password",
-                      Icon(
+                      const Icon(
                         Icons.lock_rounded,
                         color: Colors.white,
                       ),
-                      confirmPasswordEditingController),
-                    SizedBox(height: 20,),
+                      confirmPasswordEditingController,obscureText: true),
+                    const SizedBox(height: 20,),
                     customButton.customButton("Sign Up", () { print("clicked");}),
-                     SizedBox(
+                     const SizedBox(
                     height: 20,
                   ),
                     GestureDetector(
                     onTap: () {
                       // Navigate to sign up screen
                     },
-                    child: Text(
+                    child: const Text(
                       "Already have an account? Login",
                       style: TextStyle(
                         color: Colors.white,

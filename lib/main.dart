@@ -1,7 +1,4 @@
-import 'package:dating_app/components/authentication/screens/forgot_password_screen.dart';
-import 'package:dating_app/components/authentication/screens/login_screen.dart';
-import 'package:dating_app/components/authentication/screens/signup_screen.dart';
-import 'package:dating_app/components/welcomescreen/screens/welcome_screen.dart';
+import 'package:dating_app/components/profileSetup/screens/updateProfilePhoto.dart';
 import 'package:dating_app/injection.dart';
 import 'package:flutter/material.dart';
 
@@ -22,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SignUpScreen()
+      home: const UpdateProfilePhotoScreen()
     );
   }
 }

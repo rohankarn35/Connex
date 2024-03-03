@@ -29,8 +29,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 30,),
-            Text(
+            const SizedBox(height: 30,),
+            const Text(
               "Forgot Password",
               style: TextStyle(
                 fontSize: 36,
@@ -38,40 +38,40 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: TextFormField(
                 decoration: InputDecoration(
                   hintText: "Email",
-                  prefixIcon: Icon(Icons.email, color: Colors.white),
+                  prefixIcon: const Icon(Icons.email, color: Colors.white),
                   filled: true,
                   fillColor: Colors.white.withOpacity(0.2),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10),
                     borderSide: BorderSide.none,
                   ),
-                  contentPadding: EdgeInsets.symmetric(
+                  contentPadding: const EdgeInsets.symmetric(
                     horizontal: 20,
                     vertical: 15,
                   ),
                 ),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             GestureDetector(
               onTap: () {
                 // Perform reset password action
               },
               child: Container(
-                margin: EdgeInsets.symmetric(horizontal: 45),
+                margin: const EdgeInsets.symmetric(horizontal: 45),
                 height: 50,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(
+                child: const Center(
                   child: Text(
                     "Send Reset Link",
                     style: TextStyle(
