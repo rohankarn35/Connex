@@ -1,4 +1,4 @@
-# dating_app
+# Connex
 
 A new Flutter project.
 
