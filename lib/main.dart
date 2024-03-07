@@ -1,3 +1,4 @@
+import 'package:dating_app/components/authentication/bloc/authentication_bloc.dart';
 import 'package:dating_app/components/authentication/screens/login_screen.dart';
 import 'package:dating_app/components/authentication/screens/signup_screen.dart';
 import 'package:dating_app/components/profileSetup/screens/allSetScreen.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => WelcomescreenBloc()),
+        BlocProvider(create: (context) => AuthenticationBloc()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

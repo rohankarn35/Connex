@@ -4,6 +4,7 @@ part of 'authentication_bloc.dart';
 sealed class AuthenticationEvent {}
 
 final class AuthenticationInitialEvent extends AuthenticationEvent {}
-final class AuthenticationLoginButtonClickedActionEvent extends AuthenticationEvent {} 
-final class AuthenticationSignUpButtonClickedActionEvent extends AuthenticationEvent {}
-final class AuthenticationForgotPasswordButtonClickedActionEvent extends AuthenticationEvent {}
+final class AuthenticationLoginButtonClickedEvent extends AuthenticationEvent {} 
+final class AuthenticationSignUpButtonClickedEvent extends AuthenticationEvent {}
+final class AuthenticationForgotPasswordButtonClickedEvent extends AuthenticationEvent {}
+final class AuthenticationNavigateToWelcomeProfileScreenActionEvent extends AuthenticationEvent {}
