@@ -1,4 +1,6 @@
+import 'package:dating_app/injection.dart';
 import 'package:dating_app/widgets/custom_button.dart';
+import 'package:dating_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,6 +11,22 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  late final CustomButton _customButton;
+  late final CustomTextField _customTextFormField;
+  late final TextEditingController _emailEditingController;
+  late final TextEditingController _passwordEditingController;
+
+  @override
+  void initState() {
+    _customButton = locator.get<CustomButton>();
+    _customTextFormField = locator.get<CustomTextField>();
+    _emailEditingController = locator.get<TextEditingController>();
+    _passwordEditingController = locator.get<TextEditingController>();
+
+    // TODO: implement initState
+    super.initState();
+  }
+
 
 
 
@@ -47,70 +65,26 @@ class _LoginScreenState extends State<LoginScreen> {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 50),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintStyle:
-                          TextStyle(color: Colors.black.withOpacity(0.3)),
-                      hintText: "Email",
-                      prefixIcon: const Icon(Icons.email, color: Colors.white),
-                      filled: true,
-                      fillColor: Colors.white.withOpacity(0.2),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none,
+              
+                  _customTextFormField.customTextField(
+                      "Email",
+                      const Icon(
+                        Icons.email,
+                        color: Colors.white,
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 15,
-                      ),
-                    ),
-                    style: const TextStyle(color: Colors.white),
-                  ),
+                      _emailEditingController),
                   const SizedBox(height: 20),
-                  TextFormField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintStyle:
-                          TextStyle(color: Colors.black.withOpacity(0.3)),
-                      hintText: "Password",
-                      prefixIcon: const Icon(Icons.lock, color: Colors.white),
-                      filled: true,
-                      fillColor: Colors.white.withOpacity(0.2),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide.none,
+                  _customTextFormField.customTextField(
+                      "Password",
+                      const Icon(
+                        Icons.lock,
+                        color: Colors.white,
                       ),
-                      contentPadding: const EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 15,
-                      ),
-                    ),
-                    style: const TextStyle(color: Colors.white),
-                  ),
+                      _passwordEditingController, obscureText: true),
+                 
                   const SizedBox(height: 10),
                   const SizedBox(height: 15),
-                  GestureDetector(
-                    onTap: () {
-                      // Perform login action
-                    },
-                    child: Container(
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Color(0xFFD6426C),
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  _customButton.customButton("Login", () {}),
                   const SizedBox(height: 30),
                   GestureDetector(
                     onTap: () {},
@@ -164,8 +138,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
-                  CustomButton().customButton("Login With Phone Number", () {})
+                  const SizedBox(height: 40),
+                  _customButton.customButton("Login With Phone Number", () {})
                 ],
               ),
             ),

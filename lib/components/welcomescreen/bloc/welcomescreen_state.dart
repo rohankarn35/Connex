@@ -5,10 +5,10 @@ sealed class WelcomescreenState {}
 
 sealed class WelcomesreenActionState extends WelcomescreenState {}
 
-class WelcomescreenNavigateToLoginScreen extends WelcomesreenActionState {}
+final class WelcomescreenNavigateToLoginScreen extends WelcomesreenActionState {}
 
-class WelcomescreenNavigatetoSignUpScreen extends WelcomesreenActionState {}
+final class WelcomescreenNavigatetoSignUpScreen extends WelcomesreenActionState {}
 
-class WelcomescreenErrorState extends WelcomescreenState {}
+final class WelcomescreenErrorState extends WelcomescreenState {}
 
 final class WelcomescreenInitialState extends WelcomescreenState {}

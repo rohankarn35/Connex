@@ -11,26 +11,26 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
- late final CustomTextField customTextFormField;
-  late final TextEditingController firstNameEditingController;
-  late final TextEditingController lastNameEditingController;
-  late final TextEditingController emailEditingController;
-  late final TextEditingController createPasswordEditingController;
-  late final TextEditingController confirmPasswordEditingController;
-  late final CustomButton customButton;
+ late final CustomTextField _customTextFormField;
+  late final TextEditingController _firstNameEditingController;
+  late final TextEditingController _lastNameEditingController;
+  late final TextEditingController _emailEditingController;
+  late final TextEditingController _createPasswordEditingController;
+  late final TextEditingController _confirmPasswordEditingController;
+  late final CustomButton _customButton;
   @override
   void initState() {
  try {
-    customTextFormField = locator.get<CustomTextField>();
-    firstNameEditingController = locator.get<TextEditingController>();
-    lastNameEditingController = locator.get<TextEditingController>();
-    emailEditingController = locator.get<TextEditingController>();
-    createPasswordEditingController = locator.get<TextEditingController>();
-    confirmPasswordEditingController = locator.get<TextEditingController>();
-    customButton = locator.get<CustomButton>();
+    _customTextFormField = locator.get<CustomTextField>();
+    _firstNameEditingController = locator.get<TextEditingController>();
+    _lastNameEditingController = locator.get<TextEditingController>();
+    _emailEditingController = locator.get<TextEditingController>();
+    _createPasswordEditingController = locator.get<TextEditingController>();
+    _confirmPasswordEditingController = locator.get<TextEditingController>();
+    _customButton = locator.get<CustomButton>();
    
  } catch (e) {
-  print(e);
+    print("Error: $e");
    
  }
     // TODO: implement initState
@@ -71,58 +71,58 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  customTextFormField.customTextField(
+                  _customTextFormField.customTextField(
                      
                       "First Name",
                       const Icon(
                         Icons.person_2_rounded,
                         color: Colors.white,
                       ),
-                      firstNameEditingController,),
+                      _firstNameEditingController,),
                   const SizedBox(
                     height: 10,
                   ),
               
-                  customTextFormField.customTextField(
+                  _customTextFormField.customTextField(
                       "Last Name",
                       const Icon(
                         Icons.person_2_rounded,
                         color: Colors.white,
                       ),
-                      lastNameEditingController),
+                      _lastNameEditingController),
                   const SizedBox(
                     height: 10,
                   ),
-                  customTextFormField.customTextField(
+                  _customTextFormField.customTextField(
                       "Email",
                       const Icon(
                         Icons.email_rounded,
                         color: Colors.white,
                       ),
-                      emailEditingController,keyboardType: TextInputType.emailAddress),
+                      _emailEditingController,keyboardType: TextInputType.emailAddress),
                   const SizedBox(
                     height: 10,
                   ),
-                  customTextFormField.customTextField(
+                  _customTextFormField.customTextField(
                       "Create Password",
                       const Icon(
                         Icons.lock_rounded,
                         color: Colors.white,
                       ),
-                      createPasswordEditingController,obscureText: true),
+                      _createPasswordEditingController,obscureText: true),
                   const SizedBox(
                     height: 10,
                   ),
-                  customTextFormField.customTextField(
+                  _customTextFormField.customTextField(
                     
                       "Confirm Password",
                       const Icon(
                         Icons.lock_rounded,
                         color: Colors.white,
                       ),
-                      confirmPasswordEditingController,obscureText: true),
+                      _confirmPasswordEditingController,obscureText: true),
                     const SizedBox(height: 20,),
-                    customButton.customButton("Sign Up", () { print("clicked");}),
+                    _customButton.customButton("Sign Up", () { print("clicked");}),
                      const SizedBox(
                     height: 20,
                   ),

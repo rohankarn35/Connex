@@ -1,3 +1,6 @@
+import 'package:dating_app/injection.dart';
+import 'package:dating_app/widgets/custom_button.dart';
+import 'package:dating_app/widgets/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
 class ForgotPasswordScreen extends StatefulWidget {
@@ -8,6 +11,21 @@ class ForgotPasswordScreen extends StatefulWidget {
 }
 
 class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
+  late final CustomTextField _customTextFormField;
+  late final CustomButton _customButton;
+  late final TextEditingController _emailEditingController;
+
+@override
+  void initState() {
+    _customButton = locator.get<CustomButton>();
+    _customTextFormField = locator.get<CustomTextField>();
+    _emailEditingController = locator.get<TextEditingController>();
+
+    // TODO: implement initState
+    super.initState();
+  }
+
+ 
   @override
   Widget build(BuildContext context) {
    return Scaffold(
@@ -41,47 +59,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: TextFormField(
-                decoration: InputDecoration(
-                  hintText: "Email",
-                  prefixIcon: const Icon(Icons.email, color: Colors.white),
-                  filled: true,
-                  fillColor: Colors.white.withOpacity(0.2),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 15,
-                  ),
-                ),
-                style: const TextStyle(color: Colors.white),
-              ),
+              child: _customTextFormField.customTextField("Email", Icon(Icons.email_rounded,color: Colors.white,), _emailEditingController)
             ),
-            const SizedBox(height: 20),
-            GestureDetector(
-              onTap: () {
-                // Perform reset password action
-              },
-              child: Container(
-                margin: const EdgeInsets.symmetric(horizontal: 45),
-                height: 50,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: const Center(
-                  child: Text(
-                    "Send Reset Link",
-                    style: TextStyle(
-                      color: Color(0xFFD6426C),
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ),
+            const SizedBox(height: 40),
+           Padding(padding: EdgeInsets.symmetric(horizontal: 20),
+            child: _customButton.customButton("Send Reset Link", (){}),
             ),
           ],
         ),
